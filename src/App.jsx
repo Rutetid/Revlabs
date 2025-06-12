@@ -10,17 +10,19 @@ import WhyChoose from "./components/WhyChoose";
 import Footer from "./components/Footer";
 
 const App = () => {
-	return <div className="">
-		<Navbar />
-		<Hero />
-		<Services />
-		<Stats />
-		<TrustedBrands />
-		<OurServices />
-		<Industries />
-		<WhyChoose />
-		<Footer />
-	</div>;
+  return (
+    <div className="">
+      <Navbar />
+      <Hero />
+      <Services />
+      <Stats />
+      <TrustedBrands />
+      <OurServices />
+      <Industries />
+      <WhyChoose />
+      <Footer />
+    </div>
+  );
 };
 
 export default App;

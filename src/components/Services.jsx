@@ -1,11 +1,16 @@
-import ServiceCard from "./ServiceCard"
+import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const services = [
     {
       title: "Mobile & Web App",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -18,7 +23,12 @@ const Services = () => {
     {
       title: "Ecommerce Solutions",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -31,7 +41,12 @@ const Services = () => {
     {
       title: "Enterprise Software",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -44,7 +59,12 @@ const Services = () => {
     {
       title: "Gen AI Product",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -57,7 +77,12 @@ const Services = () => {
     {
       title: "Tech Modernisation",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -70,7 +95,12 @@ const Services = () => {
     {
       title: "Consulting",
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -80,19 +110,23 @@ const Services = () => {
         </svg>
       ),
     },
-  ]
+  ];
 
   return (
     <section id="services" className="bg-white px-4 sm:px-6 lg:px-8">
       <div className="px-10 mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
           {services.map((service, index) => (
-            <ServiceCard key={index} title={service.title} icon={service.icon} />
+            <ServiceCard
+              key={index}
+              title={service.title}
+              icon={service.icon}
+            />
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;
