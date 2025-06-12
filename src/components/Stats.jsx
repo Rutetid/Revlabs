@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from "motion/react"
 
 const Stats = () => {
   const stats = [
@@ -25,6 +26,27 @@ const Stats = () => {
   ]
 
   const [animatedNumbers, setAnimatedNumbers] = useState(stats.map(() => 0))
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  }
 
   useEffect(() => {
     const duration = 2000 // 2 seconds
@@ -53,8 +75,9 @@ const Stats = () => {
   }, [])
 
   return (
-    <section className="bg-primary py-20 px-4 sm:px-6 lg:px-8 mt-10">
-      <div className="max-w-7xl mx-auto">        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <motion.section className="bg-primary py-20 px-4 sm:px-6 lg:px-8 mt-10" initial="hidden" whileInView={"visible"} viewport={{ once: true , amount: 0.3 }} variants={containerVariants}>
+      <div className="max-w-7xl mx-auto">        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 font-montserrat">
@@ -67,7 +90,7 @@ const Stats = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
