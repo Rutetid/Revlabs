@@ -20,9 +20,11 @@ const Navbar = () => {
             {" "}
             {/* Logo */}
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-text-primary font-montserrat">
-                Rev<span className="text-primary">Labs</span>
-              </span>
+              <img
+                src="/Revlabs_logo.png"
+                alt="RevLabs"
+                className="h-8 w-auto"
+              />
             </div>
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
