@@ -6,10 +6,10 @@ const Footer = () => {
       <div className=" mx-auto">
         {/* Main Footer Content */}
         <div className="mb-10">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 leading-tight font-montserrat">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 leading-tight font-poppins">
             Let’s build a tailored strategy for your next phase of scale...
           </h1>
-          <button className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center gap-2 font-montserrat">
+          <button className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center gap-2 font-poppins">
             Let's Talk
             <svg
               className="w-5 h-5"
@@ -31,14 +31,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 font-montserrat">
+            <h3 className="text-lg font-semibold mb-6 font-poppins">
               SERVICES
             </h3>
             <ul className="space-y-4">
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   App Development
                 </a>
@@ -46,7 +46,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   E-Commerce Software
                 </a>
@@ -54,7 +54,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Marketplace
                 </a>
@@ -62,7 +62,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Custom Software
                 </a>
@@ -70,7 +70,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Automation Tools
                 </a>
@@ -78,7 +78,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   ML & AI
                 </a>
@@ -86,7 +86,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Generative AI
                 </a>
@@ -94,7 +94,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Business & Analytics
                 </a>
@@ -103,14 +103,14 @@ const Footer = () => {
           </div>
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 font-montserrat">
+            <h3 className="text-lg font-semibold mb-6 font-poppins">
               COMPANY
             </h3>
             <ul className="space-y-4">
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   About
                 </a>
@@ -118,7 +118,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Careers
                 </a>
@@ -126,7 +126,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Blogs
                 </a>
@@ -134,7 +134,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Support
                 </a>
@@ -143,14 +143,14 @@ const Footer = () => {
           </div>
           {/* Legal */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 font-montserrat">
+            <h3 className="text-lg font-semibold mb-6 font-poppins">
               LEGAL
             </h3>
             <ul className="space-y-4">
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Privacy Policy
                 </a>
@@ -158,7 +158,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white/80 hover:text-white transition-colors font-montserrat"
+                  className="text-white/80 hover:text-white transition-colors font-poppins"
                 >
                   Terms of Services
                 </a>
@@ -166,7 +166,7 @@ const Footer = () => {
             </ul>
 
             <div className="mt-8">
-              <h4 className="text-sm font-semibold mb-4 font-montserrat">
+              <h4 className="text-sm font-semibold mb-4 font-poppins">
                 STAY CONNECTED.
               </h4>
               <div className="flex gap-4">
@@ -205,28 +205,28 @@ const Footer = () => {
           </div>{" "}
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-2 font-montserrat">
+            <h3 className="text-lg font-semibold mb-2 font-poppins">
               Contact Us
             </h3>{" "}
             <div className="space-y-">
               <div>
-                <p className="text-white/80 font-montserrat">hey@revlabs.com</p>
+                <p className="text-white/80 font-poppins">hey@revlabs.com</p>
               </div>
 
               <div className="mb-4">
-                <p className="text-white/80 font-montserrat">
+                <p className="text-white/80 font-poppins">
                   India: +91 9639734405
                 </p>
-                <p className="text-white/80 font-montserrat">
+                <p className="text-white/80 font-poppins">
                   Dubai: +971 585813678
                 </p>
               </div>
 
               <div>
-                <p className="text-lg font-semibold mb-2 font-montserrat">
+                <p className="text-lg font-semibold mb-2 font-poppins">
                   Office Address
                 </p>
-                <p className="text-white/80 text-sm leading-relaxed font-montserrat">
+                <p className="text-white/80 text-sm leading-relaxed font-poppins">
                   RevLabs Technology Solutions,
                   <br />
                   Electronic City, Hosur Road,
@@ -239,7 +239,7 @@ const Footer = () => {
         </div>{" "}
         {/* Bottom Copyright */}
         <div className="border-t border-white/20 pt-8">
-          <p className="text-white/60 text-sm font-montserrat">
+          <p className="text-white/60 text-sm font-poppins">
             © 2024 RevLabs. All rights reserved.
           </p>
         </div>

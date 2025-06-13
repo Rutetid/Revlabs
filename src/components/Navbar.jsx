@@ -12,7 +12,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 font-montserrat border-b border-gray-100">
+    <header className="bg-white shadow-sm sticky top-0 z-50 font-poppins border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left Section: Logo and Navigation */}

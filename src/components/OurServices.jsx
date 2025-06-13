@@ -209,10 +209,10 @@ const OurServices = () => {
       <div className=" mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-montserrat">
+          <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-poppins">
             OUR SERVICES
           </p>
-          <h2 className="text-3xl sm:text-5xl font-bold mb-6 font-montserrat">
+          <h2 className="text-3xl sm:text-5xl font-bold mb-6 font-poppins">
             Everything You Need to Scale.
             <span className="block">All in One Place.</span>
           </h2>
@@ -234,12 +234,12 @@ const OurServices = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-3xl sm:text-4xl font-bold mb-6 font-montserrat">
+                <h3 className="text-3xl sm:text-4xl font-bold mb-6 font-poppins">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-300 text-lg mb-8 leading-relaxed font-montserrat">
+                <p className="text-gray-300 text-lg mb-8 leading-relaxed font-poppins">
                   {service.description}
                 </p>
 
@@ -260,7 +260,7 @@ const OurServices = () => {
                           />
                         </svg>
                       </div>
-                      <span className="text-white font-medium font-montserrat">
+                      <span className="text-white font-medium font-poppins">
                         {feature}
                       </span>
                     </div>
@@ -288,7 +288,7 @@ const OurServices = () => {
                 {/* Overlay with service indicator */}
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4">
-                    <h4 className="text-white font-bold text-lg font-montserrat">
+                    <h4 className="text-white font-bold text-lg font-poppins">
                       {services[activeSection]?.title}
                     </h4>
                     <div className="flex space-x-2 mt-2">

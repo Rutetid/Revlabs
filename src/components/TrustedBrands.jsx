@@ -30,13 +30,13 @@ const TrustedBrands = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4 font-montserrat">
+          <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4 font-poppins">
             TRUSTED BY
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6 font-montserrat">
+          <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6 font-poppins">
             Leading Brands
           </h2>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed font-montserrat">
+          <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed font-poppins">
             We've helped over 30+ businesses go to the market with amazing
             products we helped them build. And every time our clients, and the
             market just loved it!

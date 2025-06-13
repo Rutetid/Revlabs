@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Badge */}
         <div className="mb-8">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border-gray-200 border text-black text-md font-medium">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border-gray-200 border text-black text-md font-medium font-poppins">
             <svg className="w-4 h-4 mr-2" fill="blue" viewBox="0 0 20 20">
               <path
                 fillRule="evenodd"
@@ -37,14 +37,14 @@ const Hero = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight font-montserrat tracking-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight font-poppins tracking-tight">
           Unlocking Business Growth
           <span className="block">Through Innovation{" "}</span>
            
         </h1>
 
         {/* Subtext */}
-        <p className="text-sm sm:text-lg text-text-secondary mb-7 max-w-4xl mx-auto leading-relaxed font-montserrat">
+        <p className="text-sm sm:text-lg text-text-secondary mb-7 max-w-4xl mx-auto leading-relaxed font-poppins">
           We’re an outsourced growth lab that integrates strategy, tech, and
           marketing to scale startups and consumer brands. Built by operators,
           powered by results.
@@ -52,7 +52,7 @@ const Hero = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button className="inline-flex items-center bg-primary text-white hover:bg-primary-dark px-6 py-3 text-lg font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm hover:shadow-md">
+          <button className="inline-flex items-center bg-primary text-white hover:bg-primary-dark px-6 py-3 text-lg font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm hover:shadow-md font-po">
             Schedule Your Growth Audit
             <svg
               className="ml-2 w-5 h-5"

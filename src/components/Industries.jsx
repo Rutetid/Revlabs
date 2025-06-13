@@ -123,7 +123,7 @@ const Industries = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <div className="h-px bg-primary w-24"></div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mx-8 font-montserrat">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mx-8 font-poppins">
               The Industries We've Worked With
             </h2>
             <div className="h-px bg-primary w-24"></div>
@@ -145,7 +145,7 @@ const Industries = () => {
               </div>
 
               {/* Industry Name */}
-              <h3 className="text-text-primary font-medium text-sm sm:text-base font-montserrat leading-tight group-hover:text-primary transition-colors duration-300">
+              <h3 className="text-text-primary font-medium text-sm sm:text-base font-poppins leading-tight group-hover:text-primary transition-colors duration-300">
                 {industry.name}
               </h3>
             </div>

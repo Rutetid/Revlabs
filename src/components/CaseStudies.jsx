@@ -111,10 +111,10 @@ const CaseStudies = () => {
       <div className="mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-montserrat">
+          <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-poppins">
             CASE STUDIES
           </p>
-          <h2 className="text-3xl sm:text-5xl font-bold text-text-primary font-montserrat">
+          <h2 className="text-3xl sm:text-5xl font-bold text-text-primary font-poppins">
             Growth Stories We've Engineered
           </h2>
         </div>
@@ -195,25 +195,25 @@ const CaseStudies = () => {
                     <div className="p-6">
                       {/* Company Info */}
                       <div className="mb-4">
-                        <h3 className="text-primary text-lg font-bold font-montserrat">
+                        <h3 className="text-primary text-lg font-bold font-poppins">
                           {study.companyName}
                         </h3>
                         {study.subtitle && (
-                          <p className="text-xs text-gray-500 uppercase tracking-wider font-montserrat mt-1">
+                          <p className="text-xs text-gray-500 uppercase tracking-wider font-poppins mt-1">
                             {study.subtitle}
                           </p>
                         )}
                       </div>
 
                       {/* Insight */}
-                      <p className="text-text-secondary text-sm leading-relaxed mb-4 font-montserrat">
+                      <p className="text-text-secondary text-sm leading-relaxed mb-4 font-poppins">
                         {study.insight}
                       </p>
 
                       {/* Result */}
                       <div className="mb-6">
                         <div className="bg-primary/10 rounded-lg p-4">
-                          <p className="text-primary font-semibold text-sm font-montserrat">
+                          <p className="text-primary font-semibold text-sm font-poppins">
                             {study.result}
                           </p>
                         </div>
@@ -221,7 +221,7 @@ const CaseStudies = () => {
 
                       {/* CTA Button */}
                       {!study.isSpecial ? (
-                        <button className="w-full border-2 border-primary text-primary font-semibold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 font-montserrat">
+                        <button className="w-full border-2 border-primary text-primary font-semibold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 font-poppins">
                           View Case Study
                           <svg
                             className="w-4 h-4"
@@ -238,7 +238,7 @@ const CaseStudies = () => {
                           </svg>
                         </button>
                       ) : (
-                        <button className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/80 transition-colors duration-300 flex items-center justify-center gap-2 font-montserrat">
+                        <button className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/80 transition-colors duration-300 flex items-center justify-center gap-2 font-poppins">
                           Get Started
                           <svg
                             className="w-4 h-4"

@@ -79,7 +79,7 @@ const Stats = () => {
 
   return (
     <motion.section
-      className="bg-primary py-20 px-4 sm:px-6 lg:px-8 mt-10"
+      className="bg-primary py-20 px-4 sm:px-6 lg:px-8 mt-10 font-poppins"
       initial="hidden"
       whileInView={"visible"}
       viewport={{ once: true, amount: 0.3 }}
@@ -89,11 +89,11 @@ const Stats = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 font-montserrat">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 ">
                 {animatedNumbers[index]}
                 {stat.suffix}
               </div>
-              <div className="text-lg text-white/80 font-medium font-montserrat">
+              <div className="text-lg text-white/80 font-medium ">
                 {stat.label}
               </div>
             </div>

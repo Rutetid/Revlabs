@@ -53,10 +53,10 @@ const WhyChoose = () => {
           <div>
             {/* Header */}
             <div className="mb-12">
-              <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4 font-montserrat">
+              <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4 font-poppins">
                 WHAT LEAD US
               </p>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-text-primary font-montserrat">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-text-primary font-poppins">
                 Why RevLabs
               </h2>
             </div>
@@ -85,10 +85,10 @@ const WhyChoose = () => {
 
                   {/* Content */}
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-3 font-montserrat">
+                    <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-3 font-poppins">
                       {reason.title}
                     </h3>
-                    <p className="text-text-secondary text-base leading-relaxed font-montserrat">
+                    <p className="text-text-secondary text-base leading-relaxed font-poppins">
                       {reason.description}
                     </p>
                   </div>

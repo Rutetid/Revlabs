@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        helvetica: ["Helvetica", "Arial", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        sans: ["Poppins", "system-ui", "sans-serif"],
       },
       colors: {
         primary: {
