@@ -7,6 +7,7 @@ import TrustedBrands from "./components/TrustedBrands";
 import OurServices from "./components/OurServices";
 import Industries from "./components/Industries";
 import WhyChoose from "./components/WhyChoose";
+import CaseStudies from "./components/CaseStudies";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
       <OurServices />
       <Industries />
       <WhyChoose />
+      <CaseStudies />
       <Footer />
     </div>
   );

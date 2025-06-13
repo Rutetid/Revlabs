@@ -3,20 +3,20 @@ import { useState, useEffect, useRef } from "react";
 const OurServices = () => {
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = useRef([]);
-
   const services = [
     {
-      id: "mobile-app",
-      title: "Mobile App Development",
+      id: "strategic-growth",
+      title: "Strategic Growth Consulting",
       description:
-        "We can help you build engaging and user-friendly mobile applications which are quick to launch and easy to maintain.",
+        "Market research, audience segmentation & go-to-market planning to accelerate your business growth with data-driven insights.",
       features: [
-        "Android App Development",
-        "iOS App Development",
-        "Cross Platform App Development",
+        "Market Research & Analysis",
+        "Audience Segmentation",
+        "Go-to-Market Planning",
+        "Growth Strategy Development",
       ],
       image:
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       icon: (
         <svg
           className="w-8 h-8 text-white"
@@ -28,24 +28,24 @@ const OurServices = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
           />
         </svg>
       ),
     },
     {
-      id: "ecommerce",
-      title: "E-commerce Software Development",
+      id: "marketplace-growth",
+      title: "Aggregator & Marketplace Growth",
       description:
-        "We help brands create seamless shopping experiences and automate operations to maximise ROI.",
+        "Tailored strategies for Swiggy, Zomato, Talabat, Careem & more to maximize your presence and revenue on major platforms.",
       features: [
-        "Custom D2C commerce platforms",
-        "B2B retail platforms",
-        "Shopify website",
-        "Marketplace solutions",
+        "Swiggy & Zomato Optimization",
+        "Talabat & Careem Strategies",
+        "Platform-Specific Growth Hacks",
+        "Revenue Optimization",
       ],
       image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       icon: (
         <svg
           className="w-8 h-8 text-white"
@@ -57,24 +57,24 @@ const OurServices = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
           />
         </svg>
       ),
     },
     {
-      id: "web-development",
-      title: "Web Development",
+      id: "brand-development",
+      title: "Brand Development & Positioning",
       description:
-        "Build scalable and performant web applications with modern technologies and best practices.",
+        "Craft compelling brand stories that convert & scale, building a strong identity that resonates with your target audience.",
       features: [
-        "Frontend Development",
-        "Backend Development",
-        "Full Stack Solutions",
-        "Progressive Web Apps",
+        "Brand Strategy & Positioning",
+        "Visual Identity Design",
+        "Brand Storytelling",
+        "Brand Guidelines & Assets",
       ],
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       icon: (
         <svg
           className="w-8 h-8 text-white"
@@ -86,24 +86,24 @@ const OurServices = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m16 0h2M3 15h2m16 0h2M7 12h10l-3 3m0-6l3 3"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
           />
         </svg>
       ),
     },
     {
-      id: "ai-solutions",
-      title: "AI & Machine Learning",
+      id: "performance-marketing",
+      title: "Performance Marketing",
       description:
-        "Leverage the power of artificial intelligence to transform your business processes and decision making.",
+        "Paid ads, SEO, influencer & retention strategy built around ROI to drive measurable growth and maximize your marketing investment.",
       features: [
-        "Gen AI Product Development",
-        "Machine Learning Models",
-        "AI Integration",
-        "Data Analytics",
+        "Paid Advertising Campaigns",
+        "SEO & Content Strategy",
+        "Influencer Marketing",
+        "Customer Retention Programs",
       ],
       image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       icon: (
         <svg
           className="w-8 h-8 text-white"
@@ -115,7 +115,65 @@ const OurServices = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+          />{" "}
+        </svg>
+      ),
+    },
+    {
+      id: "product-tech-consulting",
+      title: "Product & Tech Consulting",
+      description:
+        "Build scalable digital experiences that drive growth with expert guidance on product strategy and technical architecture.",
+      features: [
+        "Product Strategy & Roadmap",
+        "Technical Architecture Review",
+        "Scalability Planning",
+        "Digital Experience Optimization",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      icon: (
+        <svg
+          className="w-8 h-8 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+      ),
+    },
+    {
+      id: "content-strategy",
+      title: "Content Strategy & Creation",
+      description:
+        "Creative storytelling that engages and sells, crafting compelling content that resonates with your audience and drives conversions.",
+      features: [
+        "Content Strategy Development",
+        "Creative Storytelling",
+        "Multi-Channel Content Creation",
+        "Content Performance Analytics",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      icon: (
+        <svg
+          className="w-8 h-8 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
           />
         </svg>
       ),
@@ -151,18 +209,19 @@ const OurServices = () => {
       <div className=" mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4 font-montserrat">
+          <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-montserrat">
             OUR SERVICES
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-montserrat">
-            360 Degree Digital Solution
+          <h2 className="text-3xl sm:text-5xl font-bold mb-6 font-montserrat">
+            Everything You Need to Scale.
+            <span className="block">All in One Place.</span>
           </h2>
         </div>
 
         {/* Services Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Content - Scrollable Sections */}
-          <div className="space-y-32">
+          <div className="space-y-32 mb-60">
             {services.map((service, index) => (
               <div
                 key={service.id}

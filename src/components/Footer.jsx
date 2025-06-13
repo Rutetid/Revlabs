@@ -6,8 +6,8 @@ const Footer = () => {
       <div className=" mx-auto">
         {/* Main Footer Content */}
         <div className="mb-10">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 max-w-4xl leading-tight font-montserrat">
-            Your search for innovation partner ends here...
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 leading-tight font-montserrat">
+            Let’s build a tailored strategy for your next phase of scale...
           </h1>
           <button className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center gap-2 font-montserrat">
             Let's Talk
@@ -205,18 +205,25 @@ const Footer = () => {
           </div>{" "}
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 font-montserrat">
+            <h3 className="text-lg font-semibold mb-2 font-montserrat">
               Contact Us
-            </h3>
-            <div className="space-y-6">
+            </h3>{" "}
+            <div className="space-y-">
               <div>
+                <p className="text-white/80 font-montserrat">hey@revlabs.com</p>
+              </div>
+
+              <div className="mb-4">
                 <p className="text-white/80 font-montserrat">
-                  contact@revlabs.in
+                  India: +91 9639734405
+                </p>
+                <p className="text-white/80 font-montserrat">
+                  Dubai: +971 585813678
                 </p>
               </div>
 
               <div>
-                <p className="text-sm font-semibold mb-2 font-montserrat">
+                <p className="text-lg font-semibold mb-2 font-montserrat">
                   Office Address
                 </p>
                 <p className="text-white/80 text-sm leading-relaxed font-montserrat">
