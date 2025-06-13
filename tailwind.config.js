@@ -9,7 +9,7 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#4F46E5", // Indigo-600
+          DEFAULT: "#2e38f2", // Blueish
           light: "#6366F1", // Indigo-500
           dark: "#4338CA", // Indigo-700
         },
@@ -25,7 +25,7 @@ export default {
         },
         text: {
           primary: "#1F2937", // Gray-900
-          secondary: "#4B5563", // Gray-700
+          secondary: "#4B5563", // Gray-700 f3e9dc
         },
       },
     },
