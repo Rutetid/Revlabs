@@ -34,7 +34,7 @@ const Stats = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        staggerChildren: 0.2,
+        staggerChildren: 0.4,
       },
     },
   };
@@ -85,7 +85,7 @@ const Stats = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
     >
-      <div className="max-w-7xl mx-auto">
+      <motion.div className="max-w-7xl mx-auto" variants={itemVariants}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
@@ -99,7 +99,7 @@ const Stats = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const TrustedBrands = () => {
   const brands = [
     {
@@ -22,11 +24,29 @@ const TrustedBrands = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   // Duplicate brands for seamless infinite scroll
   const duplicatedBrands = [...brands, ...brands];
 
   return (
-    <section className="bg-secondary-light py-20 px-4 sm:px-6 lg:px-8">
+    <motion.section
+      className="bg-secondary-light py-20 px-4 sm:px-6 lg:px-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -62,7 +82,7 @@ const TrustedBrands = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
