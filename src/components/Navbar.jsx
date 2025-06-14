@@ -13,8 +13,8 @@ const Navbar = () => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 font-poppins border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex items-center justify-between h-20">
           {/* Left Section: Logo and Navigation */}
           <div className="flex items-center space-x-12">
             {" "}
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-text-secondary hover:text-primary px-3 py-2 font-medium transition-colors duration-200 text-sm"
+                  className="text-text-secondary hover:text-primary px-3 py-2 font-medium transition-colors duration-200 text-md"
                 >
                   {item.name}
                 </a>
@@ -41,7 +41,7 @@ const Navbar = () => {
           </div>{" "}
           {/* Right Section: CTA Button */}
           <div className="hidden md:block ml-auto">
-            <button className="bg-primary text-white hover:bg-primary-dark px-6 py-2 text-sm font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm hover:shadow-md">
+            <button className="bg-primary text-white hover:bg-primary-dark px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm hover:shadow-md">
               Get in touch
             </button>
           </div>
