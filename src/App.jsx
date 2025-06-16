@@ -8,6 +8,7 @@ import OurServices from "./components/OurServices";
 import Industries from "./components/Industries";
 import WhyChoose from "./components/WhyChoose";
 import CaseStudies from "./components/CaseStudies";
+import Team from "./components/Team";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <Industries />
       <WhyChoose />
       <CaseStudies />
+      <Team />
       <Footer />
     </div>
   );

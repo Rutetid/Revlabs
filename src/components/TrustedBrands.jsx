@@ -50,7 +50,7 @@ const TrustedBrands = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4 font-poppins">
+          <p className="text-primary text-lg font-medium uppercase tracking-wider mb-4 font-poppins">
             TRUSTED BY
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6 font-poppins">
