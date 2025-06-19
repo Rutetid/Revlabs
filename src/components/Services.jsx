@@ -3,7 +3,12 @@ import ServiceCard from "./ServiceCard";
 const Services = () => {
   const services = [
     {
-      title: "Mobile & Web App",
+      title: "Growth Strategy & GTM",
+      flipContent: {
+        description:
+          "We craft category-defining GTM strategies rooted in market insights, audience behavior & competitive positioning.",
+        tagline: "Your product deserves a winning launch.",
+      },
       icon: (
         <svg
           className="w-8 h-8"
@@ -15,13 +20,64 @@ const Services = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
           />
         </svg>
       ),
     },
     {
-      title: "Ecommerce Solutions",
+      title: "Aggregator & Marketplace Growth",
+      flipContent: {
+        description:
+          "Scale on platforms like Swiggy, Zomato, Talabat & Careem with deep expertise in performance, ranking & conversion.",
+        tagline: "Aggregator dominance, decoded.",
+      },
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Brand Building & Positioning",
+      flipContent: {
+        description:
+          "From zero to cult—we build brands that connect, convert, and scale.",
+        tagline: "Clarity + Creativity = Breakthrough Positioning.",
+      },
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "D2C & Omni-channel Playbooks",
+      flipContent: {
+        description:
+          "Launch and grow your D2C business across q-commerce, retail, and delivery.",
+        tagline: "Seamless strategy meets scalable channels.",
+      },
       icon: (
         <svg
           className="w-8 h-8"
@@ -39,7 +95,12 @@ const Services = () => {
       ),
     },
     {
-      title: "Enterprise Software",
+      title: "Creative Content & Performance Marketing",
+      flipContent: {
+        description:
+          "High-converting ads, influencer campaigns, SEO & social content tailored to your growth stage.",
+        tagline: "Every click, calculated.",
+      },
       icon: (
         <svg
           className="w-8 h-8"
@@ -51,13 +112,18 @@ const Services = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+            d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
           />
         </svg>
       ),
     },
     {
-      title: "Gen AI Product",
+      title: "Product & Experience Innovation",
+      flipContent: {
+        description:
+          "Build or optimize your tech experiences—from custom dashboards to consumer flows.",
+        tagline: "Experience = Brand. Make it count.",
+      },
       icon: (
         <svg
           className="w-8 h-8"
@@ -69,43 +135,7 @@ const Services = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Tech Modernisation",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Consulting",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
           />
         </svg>
       ),
@@ -115,12 +145,14 @@ const Services = () => {
   return (
     <section id="services" className="bg-white px-4 sm:px-6 lg:px-8">
       <div className="px-10 mx-auto">
+        {" "}
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
               title={service.title}
               icon={service.icon}
+              flipContent={service.flipContent}
             />
           ))}
         </div>

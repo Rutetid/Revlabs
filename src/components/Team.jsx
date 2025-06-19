@@ -4,17 +4,19 @@ const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Siddharth",
-      role: "CEO",
-      description: "2x Entrepreneur, Ex. Swiggy, Gameskraft, IIT, 13 yrs exp",
+      name: "Siddharth Srikant",
+      role: "Co-founder, RevLabs · Ex-Swiggy · Growth Strategist",
+      description:
+        "Built and scaled brands like 48East (acquired by Swiggy), The Bowl Company, Homely, and Swiggy Daily",
       image:
         "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
     },
     {
       id: 2,
-      name: "Amit",
-      role: "CTO",
-      description: "2x Entrepreneur, Ex. Swiggy, IBM, NIT, 25 yrs exp",
+      name: "Ambar Mukherjee",
+      role: "Co-founder, RevLabs · Ex-Domino’s · Brand Builder",
+      description:
+        "Scaled Domino’s catering, led Kitchen Centre’s growth from 6 to 45 units, and digitized brands like Bikanervala.",
       image:
         "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
     },

@@ -54,12 +54,12 @@ const TrustedBrands = () => {
             TRUSTED BY
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6 font-poppins">
-            Leading Brands
+            30+ Brands Across India & Dubai
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed font-poppins">
-            We've helped over 30+ businesses go to the market with amazing
-            products we helped them build. And every time our clients, and the
-            market just loved it!
+            From digital-first startups and consumer brands to legacy
+            powerhouses—we’ve helped ambitious businesses scale faster and
+            launch with impact.
           </p>
         </div>{" "}
         {/* Carousel */}
