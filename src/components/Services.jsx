@@ -62,11 +62,29 @@ const Services = () => {
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
-            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
           />
         </svg>
       ),

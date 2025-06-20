@@ -43,7 +43,7 @@ const ServiceCard = ({ title, icon, flipContent }) => {
         >
           <div className="flex flex-col h-full justify-center">
             <div className="flex-1 flex flex-col justify-center">
-              <p className="text-sm text-white/95 mb-1 leading-relaxed">
+              <p className="text-xs text-white/95 mb-1 leading-relaxed">
                 {backContent.description}
               </p>
 
