@@ -1,26 +1,29 @@
 import { motion } from "motion/react";
 
-const TrustedBrands = () => {
-  const brands = [
+const TrustedBrands = () => {  const brands = [
     {
-      name: "smartt-ai",
-      logo: "https://via.placeholder.com/150x60/000000/FFFFFF?text=smartt-ai",
+      name: "48 East",
+      logo: "/48East.png",
     },
     {
-      name: "SMARTQ",
-      logo: "https://via.placeholder.com/150x60/000000/FFFFFF?text=SMARTQ",
+      name: "Bikanerwala",
+      logo: "/BikanerWala_Logo.png",
     },
     {
-      name: "FYUR",
-      logo: "https://via.placeholder.com/150x60/000000/FFFFFF?text=FYUR",
+      name: "Domino's",
+      logo: "/Dominos-logo.png",
     },
     {
-      name: "Goodera",
-      logo: "https://via.placeholder.com/150x60/000000/FFFFFF?text=Goodera",
+      name: "Story Coffee",
+      logo: "/Story-Coffee.png",
     },
     {
-      name: "TECHNOSP",
-      logo: "https://via.placeholder.com/150x60/000000/FFFFFF?text=TECHNOSP",
+      name: "Swiggy",
+      logo: "/Swiggy_logo.png",
+    },
+    {
+      name: "Unacademy",
+      logo: "/Unacademy_Logo.png",
     },
   ];
 
@@ -74,7 +77,7 @@ const TrustedBrands = () => {
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain filter  transition-all duration-300"
                   />
                 </div>
               </div>
