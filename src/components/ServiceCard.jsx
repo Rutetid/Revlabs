@@ -9,16 +9,16 @@ const ServiceCard = ({ title, icon, flipContent }) => {
     description: "Comprehensive solution tailored to your needs",
     tagline: "Let's build something amazing together.",
   };
-
   return (
     <div
-      className="flip-card h-48 cursor-pointer"
-      onClick={() => setIsFlipped(!isFlipped)}
+      className="flip-card h-56 cursor-pointer"
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
     >
       <motion.div
         className="flip-card-inner w-full h-full relative"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+        transition={{ duration: 0.3, type: "spring", stiffness: 100 }}
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front Side */}
@@ -33,7 +33,7 @@ const ServiceCard = ({ title, icon, flipContent }) => {
             <h3 className="text-sm font-semibold text-text-primary group-hover:text-primary transition-colors duration-300">
               {title}
             </h3>
-            <p className="text-xs text-gray-500 mt-2">Click to see details</p>
+            <p className="text-xs text-gray-500 mt-2">Hover to see details</p>
           </div>
         </div>{" "}
         {/* Back Side */}
@@ -42,13 +42,13 @@ const ServiceCard = ({ title, icon, flipContent }) => {
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
         >
           <div className="flex flex-col h-full justify-center">
-            <div className="flex-1 flex flex-col justify-center">
-              <p className="text-xs text-white/95 mb-1 leading-relaxed">
+            <div className="flex-1 flex flex-col justify-center items-center pt-3">
+              {" "}
+              <p className="text-sm text-white/95 mb-1 leading-relaxed text-center">
                 {backContent.description}
               </p>
-
               <div className="mt-auto pt-1 border-t border-white/20">
-                <p className="text-xs font-semibold text-white/90 italic">
+                <p className="text-xs font-semibold text-white/90 italic text-center">
                   {backContent.tagline}
                 </p>
               </div>
