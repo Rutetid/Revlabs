@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 
-const TrustedBrands = () => {  const brands = [
+const TrustedBrands = () => {
+  const brands = [
     {
       name: "48 East",
       logo: "/48East.png",
@@ -25,6 +26,38 @@ const TrustedBrands = () => {  const brands = [
       name: "Unacademy",
       logo: "/Unacademy_Logo.png",
     },
+    {
+      name: "NewEra",
+      logo: "/NewEra_Logo.png",
+    },
+    {
+      name: "48 East",
+      logo: "/48East.png",
+    },
+    {
+      name: "Bikanerwala",
+      logo: "/BikanerWala_Logo.png",
+    },
+    {
+      name: "Domino's",
+      logo: "/Dominos-logo.png",
+    },
+    {
+      name: "Story Coffee",
+      logo: "/Story-Coffee.png",
+    },
+    {
+      name: "Swiggy",
+      logo: "/Swiggy_logo.png",
+    },
+    {
+      name: "Unacademy",
+      logo: "/Unacademy_Logo.png",
+    },
+    {
+      name: "NewEra",
+      logo: "/NewEra_Logo.png",
+    },
   ];
 
   const containerVariants = {
@@ -37,9 +70,7 @@ const TrustedBrands = () => {  const brands = [
         staggerChildren: 0.2,
       },
     },
-  };
-
-  // Duplicate brands for seamless infinite scroll
+  }; // Create exactly 2 copies for seamless infinite scroll with -50% transform
   const duplicatedBrands = [...brands, ...brands];
 
   return (
@@ -77,7 +108,22 @@ const TrustedBrands = () => {  const brands = [
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-w-full max-h-full object-contain filter  transition-all duration-300"
+                    className="max-w-full max-h-full object-contain filter transition-all duration-300"
+                  />
+                </div>
+              </div>
+            ))}
+            {/* Additional duplicate set for seamless loop */}
+            {duplicatedBrands.map((brand, index) => (
+              <div
+                key={`${brand.name}-duplicate-${index}`}
+                className="flex-shrink-0 w-64 px-4"
+              >
+                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24">
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="max-w-full max-h-full object-contain filter transition-all duration-300"
                   />
                 </div>
               </div>

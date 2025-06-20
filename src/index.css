@@ -5,18 +5,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling animation for brand carousel */
+/* Continuous infinite scrolling animation */
 @keyframes scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(-100%);
   }
 }
 
 .animate-scroll {
-  animation: scroll 20s linear infinite;
+  animation: scroll 200s linear infinite;
+  width: max-content;
 }
 
 .animate-scroll:hover {
