@@ -134,7 +134,7 @@ const Industries = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#f6f5fd] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -155,11 +155,10 @@ const Industries = () => {
               className="flex flex-col items-center text-center group"
             >
               {/* Icon Container */}
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-primary/20 transition-all duration-300">
-                <div className="text-primary group-hover:text-primary-dark transition-colors duration-300">
+                <div className="text-primary group-hover:text-primary-dark transition-colors duration-300 pb-5">
                   {industry.icon}
                 </div>
-              </div>
+              
 
               {/* Industry Name */}
               <h3 className="text-text-primary font-medium text-sm sm:text-base font-poppins leading-tight group-hover:text-primary transition-colors duration-300">

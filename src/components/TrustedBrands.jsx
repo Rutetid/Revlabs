@@ -104,7 +104,7 @@ const TrustedBrands = () => {
                 key={`${brand.name}-${index}`}
                 className="flex-shrink-0 w-64 px-4"
               >
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24">
+                <div className="bg-white rounded-lg p-6 flex items-center justify-center h-24">
                   <img
                     src={brand.logo}
                     alt={brand.name}
