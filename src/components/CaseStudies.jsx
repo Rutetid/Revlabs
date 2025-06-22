@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {motion} from "motion/react"
 
 const CaseStudies = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -111,8 +112,26 @@ const CaseStudies = () => {
     setCurrentIndex(Math.min(index, maxIndex));
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   return (
-    <section className="bg-gray-50 pt-20 px-4 sm:px-6 lg:px-20">
+    <motion.section
+      className="bg-gray-50 pt-20 px-4 sm:px-6 lg:px-20"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
       <div className="mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -268,7 +287,7 @@ const CaseStudies = () => {
           </div>{" "}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {motion} from "motion/react"
 
 const WhyChoose = () => {
   const [hoveredSection, setHoveredSection] = useState(0);
@@ -29,8 +30,26 @@ const WhyChoose = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-20 mb-20">
+    <motion.section
+      className="bg-white py-20 px-4 sm:px-6 lg:px-20 mb-20"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
       <div className=" mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Content */}
@@ -110,7 +129,7 @@ const WhyChoose = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

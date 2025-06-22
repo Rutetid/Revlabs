@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const Industries = () => {
   const industries = [
     {
@@ -133,8 +135,35 @@ const Industries = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
-    <section className="bg-[#f6f5fd] py-20 px-4 sm:px-6 lg:px-8">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+      className="bg-[#f6f5fd] py-20 px-4 sm:px-6 lg:px-8"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -150,25 +179,25 @@ const Industries = () => {
         {/* Industries Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-4">
           {industries.map((industry, index) => (
-            <div
+            <motion.div
               key={index}
               className="flex flex-col items-center text-center group"
+              variants={itemVariants}
             >
               {/* Icon Container */}
-                <div className="text-primary group-hover:text-primary-dark transition-colors duration-300 pb-5">
-                  {industry.icon}
-                </div>
-              
+              <div className="text-primary group-hover:text-primary-dark transition-colors duration-300 pb-5">
+                {industry.icon}
+              </div>
 
               {/* Industry Name */}
               <h3 className="text-text-primary font-medium text-sm sm:text-base font-poppins leading-tight group-hover:text-primary transition-colors duration-300">
                 {industry.name}
               </h3>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
