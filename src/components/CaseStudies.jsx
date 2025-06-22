@@ -6,6 +6,7 @@ const CaseStudies = () => {
     {
       id: 1,
       companyName: "48East",
+      subtitle: "ASIAN CUISINE",
       logo: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&crop=center",
       insight: "Co-founded and scaled to acquisition by Swiggy",
       result: "Successfully acquired by Swiggy",
@@ -23,6 +24,7 @@ const CaseStudies = () => {
     {
       id: 3,
       companyName: "Swiggy Moments",
+      subtitle: "B2B GIFTING",
       logo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center",
       insight: "Created Swiggy's B2B gifting vertical from scratch",
       result: "New revenue stream established",
@@ -31,6 +33,7 @@ const CaseStudies = () => {
     {
       id: 4,
       companyName: "Swiggy Daily",
+      subtitle: "MEAL SUBSCRIPTION",
       logo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop&crop=center",
       insight: "Built a home-style meal subscription marketplace",
       result: "Launched subscription service",
@@ -39,6 +42,7 @@ const CaseStudies = () => {
     {
       id: 5,
       companyName: "Domino's India",
+      subtitle: "CATERING SERVICE",
       logo: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop&crop=center",
       insight: "Scaled catering as a service across key metros",
       result: "Expanded to multiple cities",
@@ -56,6 +60,7 @@ const CaseStudies = () => {
     {
       id: 7,
       companyName: "Kitchen Centre",
+      subtitle: "KITCHEN-AS-A-SERVICE",
       logo: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center",
       insight:
         "Expanded India's largest kitchen-as-a-service from 6 to 45 locations",
@@ -80,15 +85,15 @@ const CaseStudies = () => {
       result: "Successful brand transformation",
       backgroundColor: "bg-emerald-100",
     },
-    {
-      id: 10,
-      companyName: "Trusted by 50+ Brands",
-      logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center",
-      insight: "Delivering exceptional results across diverse industries",
-      result: "Join our success stories",
-      backgroundColor: "bg-indigo-100",
-      isSpecial: true,
-    },
+    // {
+    //   id: 10,
+    //   companyName: "Trusted by 50+ Brands",
+    //   logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center",
+    //   insight: "Delivering exceptional results across diverse industries",
+    //   result: "Join our success stories",
+    //   backgroundColor: "bg-indigo-100",
+    //   isSpecial: true,
+    // },
   ];
 
   const itemsPerView = 3;
@@ -174,14 +179,14 @@ const CaseStudies = () => {
               {caseStudies.map((study) => (
                 <div key={study.id} className="w-1/3 flex-shrink-0 px-4 mb-20">
                   <div
-                    className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full ${
+                    className={`rounded-2xl overflow-hidden h-full ${
                       study.isSpecial ? "border-2 border-primary" : ""
                     }`}
                   >
                     {" "}
                     {/* Image Section */}
                     <div
-                      className={`${study.backgroundColor}  h-48 flex items-center justify-center relative`}
+                      className={`${study.backgroundColor}  h-72 flex items-center justify-center relative`}
                     >
                       <div className="w-full h-full bg-white rounded-lg shadow-md overflow-hidden">
                         <img
@@ -192,7 +197,7 @@ const CaseStudies = () => {
                       </div>
                     </div>
                     {/* Content Section */}
-                    <div className="p-6">
+                    <div className="p-6 mt-5 rounded-lg border-2">
                       {/* Company Info */}
                       <div className="mb-4">
                         <h3 className="text-primary text-lg font-bold font-poppins">
@@ -206,13 +211,13 @@ const CaseStudies = () => {
                       </div>
 
                       {/* Insight */}
-                      <p className="text-text-secondary text-sm leading-relaxed mb-4 font-poppins">
+                      <p className="text-text-secondary text-md leading-relaxed mb-4 font-poppin h-12">
                         {study.insight}
                       </p>
 
                       {/* Result */}
                       <div className="mb-6">
-                        <div className="bg-primary/10 rounded-lg p-4">
+                        <div className="bg-primary/5 rounded-lg p-4">
                           <p className="text-primary font-semibold text-sm font-poppins">
                             {study.result}
                           </p>
@@ -221,7 +226,7 @@ const CaseStudies = () => {
 
                       {/* CTA Button */}
                       {!study.isSpecial ? (
-                        <button className="w-full border-2 border-primary text-primary font-semibold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 font-poppins">
+                        <button className="w-full border border-primary text-primary font-semibold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 font-poppins">
                           View Case Study
                           <svg
                             className="w-4 h-4"
