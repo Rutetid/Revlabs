@@ -103,7 +103,7 @@ const Testimonials = () => {
 
   return (
     <motion.section
-      className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 "
+      className="bg-white py-20 px-4 sm:px-6 lg:px-8 "
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
