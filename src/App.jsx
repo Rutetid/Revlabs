@@ -21,7 +21,7 @@ const App = () => {
       <Services />
       <Stats />
       <TrustedBrands />
-      {/* <StepsSection /> */}
+      <StepsSection />
       <OurServices />
       <Industries />
       <WhyChoose />
