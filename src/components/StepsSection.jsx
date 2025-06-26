@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const steps = [
 	{
@@ -8,6 +8,11 @@ const steps = [
 		description:
 			"Together, we dive into your world. A brainstorming session where your challenges meet our creative thinking",
 		subtitle: "We learn from you",
+		accordionPoints: [
+			"• Identify painpoints",
+			"• Uncover opportunities",
+			"• Flag inefficiencies",
+		],
 		icon: (
 			<svg
 				className="w-16 h-16 text-white"
@@ -30,6 +35,11 @@ const steps = [
 		description:
 			"We craft a tailored action plan that aligns with your budget and requirements – no guesswork, just solutions",
 		subtitle: "We strategize with precision",
+		accordionPoints: [
+			"• Analyze market trends",
+			"• Evaluate competitive landscape",
+			"• Develop targeted solutions",
+		],
 		icon: (
 			<svg
 				className="w-16 h-16 text-white"
@@ -52,6 +62,11 @@ const steps = [
 		description:
 			"It's go time. Our team gets to work, setting plans into motion, turning ideas into real-world impact",
 		subtitle: "We deliver results",
+		accordionPoints: [
+			"• Implement strategies",
+			"• Monitor performance",
+			"• Optimize for success",
+		],
 		icon: (
 			<svg
 				className="w-16 h-16 text-white"
@@ -72,11 +87,25 @@ const steps = [
 
 const StepsSection = () => {
 	const containerRef = useRef(null);
-	// Adjust the offset to make the scrolling between cards more consistent
+	// State to track which accordions are open (for each step)
+	const [openAccordions, setOpenAccordions] = useState({
+		0: false,
+		1: false,
+		2: false
+	});
+
 	const { scrollYProgress } = useScroll({
 		target: containerRef,
 		offset: ["start start", "end end"],
 	});
+
+	// Function to toggle specific accordion by index
+	const toggleAccordion = (index) => {
+		setOpenAccordions(prev => ({
+			...prev,
+			[index]: !prev[index]
+		}));
+	};
 
 	return (
 		// Reduce the total height to make scrolling more responsive
@@ -112,6 +141,9 @@ const StepsSection = () => {
 					// First card starts at scale 1 while others start at 0.8
 					const initialScale = index === 0 ? 1 : 0.8;
 					const scale = useTransform(scrollYProgress, [start, end], [initialScale, 1]);
+
+					// Check if this accordion is open
+					const isAccordionOpen = openAccordions[index];
 
 					return (
 						<motion.div
@@ -157,10 +189,50 @@ const StepsSection = () => {
 												</div>
 											</div>
 											<hr className="w-[800px] border-white/20" />
-											<p className="text-white font-lg text-2xl my-6">
-												{step.subtitle}
-											</p>
-											<hr className="w-[800px] border-white/20 " />
+
+											{/* Accordion Section - now for all cards */}
+											<div className="w-[800px]">
+												<div
+													className="flex items-center justify-between cursor-pointer text-white"
+													onClick={() => toggleAccordion(index)}
+												>
+													<p className="font-lg text-2xl my-6">
+														{step.subtitle}
+													</p>
+													<svg
+														className={`h-6 w-6 transition-transform ${isAccordionOpen ? 'rotate-180' : ''}`}
+														fill="none"
+														stroke="currentColor"
+														viewBox="0 0 24 24"
+													>
+														<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+													</svg>
+												</div>
+
+												{/* Accordion Content */}
+												<motion.div
+													initial={{ height: 0, opacity: 0 }}
+													animate={{
+														height: isAccordionOpen ? 'auto' : 0,
+														opacity: isAccordionOpen ? 1 : 0
+													}}
+													transition={{ duration: 0.3 }}
+													className="overflow-hidden"
+												>
+													<div className="text-white text-xl space-y-2 pb-4">
+														{step.accordionPoints.map((point, i) => (
+															<div key={i} className="ml-4">
+																{point}
+															</div>
+														))}
+													</div>
+												</motion.div>
+
+												{/* Only show the bottom hr when accordion is closed */}
+												{!isAccordionOpen && (
+													<hr className="w-[800px] border-white/20" />
+												)}
+											</div>
 										</div>
 									</div>
 								</motion.div>
