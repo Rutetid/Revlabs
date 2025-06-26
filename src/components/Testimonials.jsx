@@ -1,9 +1,14 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
+  const cardWidth = 420; // Card width + gap
+  const cardsToShow = 2; // Number of cards to display at once
+  const autoAdvanceInterval = 3000; // 3 seconds
 
   const testimonials = [
     {
@@ -52,6 +57,9 @@ const Testimonials = () => {
     },
   ];
 
+  const moduloIndex = (index) =>
+    ((index % testimonials.length) + testimonials.length) % testimonials.length;
+
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -71,45 +79,58 @@ const Testimonials = () => {
       transition: { duration: 0.6 },
     },
   };
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    }),
-  };
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setDirection(1);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+    setCurrentIndex((prevIndex) => moduloIndex(prevIndex + 1));
+  }, []);
 
-  const prevTestimonial = () => {
+  const prevTestimonial = useCallback(() => {
     setDirection(-1);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => moduloIndex(prevIndex - 1));
+  }, []);
+
+  // Setup auto-advance interval
+  useEffect(() => {
+    // Clear any existing interval first
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    // Only set up the interval if not paused
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        nextTestimonial();
+      }, autoAdvanceInterval);
+    }
+
+    // Clean up on component unmount
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [nextTestimonial, isPaused]);
+
+  // Pause auto-advance when user interacts with the carousel
+  const handleUserInteraction = () => {
+    setIsPaused(true);
+    // Resume after 5 seconds of inactivity
+    setTimeout(() => {
+      setIsPaused(false);
+    }, 3000);
   };
 
   return (
     <motion.section
-      className="bg-white py-20 px-4 sm:px-6 lg:px-8 "
+      className="bg-white py-20 px-4 sm:px-6 lg:px-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
+      onHoverStart={() => setIsPaused(true)}
+      onHoverEnd={() => setIsPaused(false)}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Header */}
         <motion.div className="text-center mb-10" variants={itemVariants}>
           <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-poppins">
@@ -119,15 +140,18 @@ const Testimonials = () => {
             What Our
             <br />
             <span className="text-text-primary">Satisfied Clients Say</span>
-          </h2>{" "}
-        </motion.div>{" "}
+          </h2>
+        </motion.div>
+
         {/* Testimonials Carousel */}
-        <div className="relative max-w-5xl mx-auto">
-          {" "}
+        <div className="relative mx-auto">
           {/* Navigation Buttons */}
           <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            onClick={() => {
+              prevTestimonial();
+              handleUserInteraction();
+            }}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
           >
             <svg
               className="w-6 h-6 text-gray-600"
@@ -144,8 +168,11 @@ const Testimonials = () => {
             </svg>
           </button>
           <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            onClick={() => {
+              nextTestimonial();
+              handleUserInteraction();
+            }}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
           >
             <svg
               className="w-6 h-6 text-gray-600"
@@ -161,79 +188,115 @@ const Testimonials = () => {
               />
             </svg>
           </button>
-          {/* Carousel Container */}
-          <div className="overflow-hidden rounded-3xl h-[500px] relative">
-            <AnimatePresence initial={false} custom={direction}>
-              <motion.div
-                key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
-                }}
-                className="bg-white shadow-lg absolute inset-0"
-              >
-                <div
-                  className={`flex flex-col md:flex-row min-h-[300px] h-[500px] bg-gradient-to-br ${testimonials[currentIndex].bgColor}`}
-                >
-                  {/* Left Side - Photo */}
-                  <div className="md:w-2/5 relative p-5">
-                    <img
-                      src={testimonials[currentIndex].image}
-                      alt={testimonials[currentIndex].name}
-                      className="w-full h-full object-cover rounded-3xl"
-                    />
-                  </div>
 
-                  {/* Right Side - Content */}
-                  <div className="md:w-3/5 p-8 flex flex-col justify-center relative">
-                    {/* Quote Icon */}
-                    <div className="pb-10">
-                      <svg
-                        className="w-12 h-12 text-black/80"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
-                      </svg>
-                    </div>
+          {/* Testimonial Cards Container */}
+          <div className="overflow-hidden h-[450px] px-16">
+            <div className="flex gap-6 h-full items-center">
+              <AnimatePresence initial={false} custom={direction}>
+                {[-1, 0, 1].map((offset) => {
+                  const adjustedIndex = moduloIndex(currentIndex + offset);
+                  const testimonial = testimonials[adjustedIndex];
 
-                    {/* Quote */}
-                    <p className="text-gray-700 text-lg leading-relaxed font-poppins mb-6 pr-16">
-                      "{testimonials[currentIndex].quote}"
-                    </p>
+                  return (
+                    <motion.div
+                      key={`testimonial-${adjustedIndex}`}
+                      custom={direction}
+                      initial={{
+                        opacity: 0,
+                        x: direction * 500,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        x: offset * cardWidth,
+                        zIndex: offset === 0 ? 1 : 0,
+                      }}
+                      exit={{
+                        opacity: 0,
+                        x: direction * -500,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                      }}
+                      className={`absolute flex-shrink-0 w-[400px] h-[400px] bg-gradient-to-br ${testimonial.bgColor} rounded-3xl shadow-xl overflow-hidden`}
+                      style={{ left: "calc(50% - 200px)" }}
+                    >
+                      <div className="flex h-full">
+                        {/* Image */}
+                        <div className="w-2/5 relative">
+                          <img
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="w-full h-full object-cover rounded-l-3xl"
+                          />
+                        </div>
+                        {/* Content */}
+                        <div className="w-3/5 p-6 flex flex-col justify-center relative">
+                          {/* Quote Icon */}
+                          <div className="mb-2">
+                            <svg
+                              className="w-6 h-6 text-gray-800"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                            </svg>
+                          </div>
 
-                    {/* Author Info */}
-                    <div>
-                      <h4 className="font-bold text-text-primary text-xl font-poppins mb-1">
-                        {testimonials[currentIndex].name}
-                      </h4>
-                      <p className="text-sm text-gray-600 font-poppins uppercase tracking-wide">
-                        {testimonials[currentIndex].position} -{" "}
-                        {testimonials[currentIndex].company}
-                      </p>
-                    </div>
+                          {/* Quote */}
+                          <p className="text-gray-800 text-sm leading-relaxed mb-4 line-clamp-4">
+                            "{testimonial.quote}"
+                          </p>
 
-                    {/* Company Logo/Icon - Optional */}
-                    <div className="absolute bottom-6 right-6">
-                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                        <svg
-                          className="w-6 h-6 text-primary"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
+                          {/* Author Info */}
+                          <div>
+                            <h4 className="font-bold text-gray-900 text-base mb-1">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-xs text-gray-700 uppercase tracking-wide">
+                              {testimonial.position} - {testimonial.company}
+                            </p>
+                          </div>
+
+                          {/* Company Logo */}
+                          <div className="absolute bottom-4 right-4">
+                            <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                              <svg
+                                className="w-3 h-3 text-gray-700"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setDirection(index > currentIndex % testimonials.length ? 1 : -1);
+                  setCurrentIndex(index);
+                  handleUserInteraction();
+                }}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentIndex % testimonials.length === index
+                    ? "bg-primary scale-125"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
