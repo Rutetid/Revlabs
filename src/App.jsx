@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
 import StepsSection from "./components/StepsSection";
+import OurServicesHeader from "./components/OurServicesHeader.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Services />
       <Stats />
       <TrustedBrands />
+        <OurServicesHeader />
       <StepsSection />
       {/*<OurServices />*/}
       <Industries />

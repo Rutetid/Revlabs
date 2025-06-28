@@ -180,7 +180,6 @@ const services = [
 
 const StepsSection = () => {
   const containerRef = useRef(null);
-  const [activeSection, setActiveSection] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -188,18 +187,15 @@ const StepsSection = () => {
   });
 
   return (
-    // Increase the total height to make scrolling slower and more controlled
-    <div ref={containerRef} className="relative h-[500vh] bg-black">
-      <div className="sticky top-20 h-screen w-full overflow-hidden">
+    <div ref={containerRef} className="relative h-[600vh]">
+      <div className="sticky top-20 h-screen w-full overflow-hidden bg-[#1a1a1a]">
         {services.map((service, index) => {
-          // Define specific timing ranges for each card
           let start, end;
-
           if (index === 0) {
             start = 0;
-            end = 0.15;
+            end = 0.10;
           } else if (index === 1) {
-            start = 0.15;
+            start = 0.10;
             end = 0.3;
           } else if (index === 2) {
             start = 0.3;
@@ -209,24 +205,31 @@ const StepsSection = () => {
             end = 0.6;
           } else if (index === 4) {
             start = 0.6;
-            end = 0.75;
+            end = 0.8;
           } else if (index === 5) {
-            start = 0.75;
-            end = 0.9;
+            start = 0.8;
+            end = 1.0;
           } else {
-            // Fallback for any additional cards
             start = 0.9;
             end = 1.0;
           }
 
-          // For the first card (index 0), set initial position to 0% instead of 100%
-          // This makes the first card visible right away
-          const initialY = index === 0 ? "0%" : "100%";
+          const initialY = index === 0 ? "10%" : "110%";
           const y = useTransform(
             scrollYProgress,
             [start, end],
             [initialY, "0%"]
           );
+
+
+          const cardColors = [
+            "#1a1a1a", // Card 1
+            "#2c0e2f", // Card 2
+            "#1e1f16", // Card 3
+            "#1c110a", // Card 4
+            "#2b1a2e", // Card 5
+            "#1a2623", // Card 6 
+          ];
 
           return (
             <motion.div
@@ -234,10 +237,12 @@ const StepsSection = () => {
               style={{
                 y,
                 zIndex: index + 1,
+                backgroundColor: cardColors[index] || "#1a1a1a",
               }}
               className="absolute top-0 left-0 w-full h-screen flex items-center justify-center pointer-events-none"
             >
-              <div className="bg-black text-white py-10 px-4 sm:px-6 lg:px-20 w-full mx-auto pointer-events-auto mt-10">
+              <div className="text-white py-10 px-4 sm:px-6 lg:px-20 w-full mx-auto pointer-events-auto "
+                   style={{ backgroundColor: cardColors[index] || "#1a1a1a" }}>
                 <motion.div
                   // Set the initial animation only for cards after the first one
                   initial={index === 0 ? { y: 0 } : { y: 50 }}
