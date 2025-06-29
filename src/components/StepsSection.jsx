@@ -187,40 +187,44 @@ const StepsSection = () => {
 	});
 
 	return (
-		<div ref={containerRef} className="relative h-[600vh]">
+		<div ref={containerRef} className="relative h-[400vh]">
 			<div className="sticky top-20 h-screen w-full overflow-hidden bg-[#1a1a1a]">
 				{services.map((service, index) => {
 					let start, end;
 					if (index === 0) {
 						start = 0;
-						end = 0.1;
+						end = 0.15;
 					} else if (index === 1) {
-						start = 0.1;
-						end = 0.2;
+						start = 0.15;
+						end = 0.30;
 					} else if (index === 2) {
-						start = 0.2;
-						end = 0.3;
+						start = 0.30;
+						end = 0.45;
 					} else if (index === 3) {
-						start = 0.3;
-						end = 0.4;
-					} else if (index === 4) {
-						start = 0.4;
-						end = 0.5;
-					} else if (index === 5) {
-						start = 0.5;
+						start = 0.45;
 						end = 0.6;
+					} else if (index === 4) {
+						start = 0.6;
+						end = 0.75;
+					} else if (index === 5) {
+						start = 0.75;
+						end = 0.9;
 					} else {
 						start = 0.9;
 						end = 1.0;
 					}
 
-          const initialY = index === 0 ? "10%" : "110%";
-          const y = useTransform(
-            scrollYProgress,
-            [start, end],
-            [initialY, "0%"]
-          );
-
+					const initialY = index === 0 ? "10%" : "110%";
+					const y = useTransform(
+						scrollYProgress,
+						[start, end],
+						[initialY, index === 0 ? "0%" :
+							index === 1 ? "4%" :
+								index === 2 ? "8%" :
+									index === 3 ? "12%" :
+										index === 4 ? "16%" :
+											"20%"]
+					);
 
 					const cardColors = [
 						"#1a1a1a", // Card 1
@@ -242,7 +246,7 @@ const StepsSection = () => {
 							className="absolute top-0 left-0 w-full h-screen flex items-center justify-center pointer-events-none"
 						>
 							<div
-								className="text-white py-10 px-4 sm:px-6 lg:px-20 w-full mx-auto pointer-events-auto "
+								className="text-white pb-10 px-4 sm:px-6 lg:px-20 w-full mx-auto pointer-events-auto "
 								style={{ backgroundColor: cardColors[index] || "#1a1a1a" }}
 							>
 								<motion.div
@@ -305,7 +309,7 @@ const StepsSection = () => {
 
 										{/* Right Image */}
 										<div className="relative">
-											<div className="h-[70vh] ">
+											<div className="h-[60vh] ">
 												<div className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl h-full w-10/12 relative ml-28 mt-12">
 													<img
 														src={service.image}
