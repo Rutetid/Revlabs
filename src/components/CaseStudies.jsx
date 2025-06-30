@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {motion} from "motion/react"
+import { motion } from "motion/react";
 
 const CaseStudies = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -97,7 +97,23 @@ const CaseStudies = () => {
     // },
   ];
 
-  const itemsPerView = 3;
+  // Mobile first: 1 card on mobile, 3 on desktop
+  const [itemsPerView, setItemsPerView] = useState(1);
+
+  React.useEffect(() => {
+    const updateItemsPerView = () => {
+      if (window.innerWidth >= 1024) {
+        setItemsPerView(3); // lg and above
+      } else {
+        setItemsPerView(1); // mobile and tablet
+      }
+    };
+
+    updateItemsPerView();
+    window.addEventListener("resize", updateItemsPerView);
+    return () => window.removeEventListener("resize", updateItemsPerView);
+  }, []);
+
   const maxIndex = Math.max(0, caseStudies.length - itemsPerView);
 
   const nextSlide = () => {
@@ -149,10 +165,10 @@ const CaseStudies = () => {
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 z-10 w-8 h-8 lg:w-12 lg:h-12 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
           >
             <svg
-              className="w-6 h-6 text-gray-600"
+              className="w-4 h-4 lg:w-6 lg:h-6 text-gray-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -168,10 +184,10 @@ const CaseStudies = () => {
           <button
             onClick={nextSlide}
             disabled={currentIndex === maxIndex}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 z-10 w-8 h-8 lg:w-12 lg:h-12 bg-white rounded-full shadow-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
           >
             <svg
-              className="w-6 h-6 text-gray-600"
+              className="w-4 h-4 lg:w-6 lg:h-6 text-gray-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -196,16 +212,18 @@ const CaseStudies = () => {
             >
               {" "}
               {caseStudies.map((study) => (
-                <div key={study.id} className="w-1/3 flex-shrink-0 px-4 mb-20">
+                <div
+                  key={study.id}
+                  className="w-full lg:w-1/3 flex-shrink-0 px-2 lg:px-4 mb-8 lg:mb-20"
+                >
                   <div
                     className={`rounded-2xl overflow-hidden h-full ${
                       study.isSpecial ? "border-2 border-primary" : ""
                     }`}
                   >
-                    {" "}
                     {/* Image Section */}
                     <div
-                      className={`${study.backgroundColor}  h-72 flex items-center justify-center relative`}
+                      className={`${study.backgroundColor} h-48 lg:h-72 flex items-center justify-center relative`}
                     >
                       <div className="w-full h-full bg-white rounded-lg shadow-md overflow-hidden">
                         <img
@@ -216,10 +234,10 @@ const CaseStudies = () => {
                       </div>
                     </div>
                     {/* Content Section */}
-                    <div className="p-6 mt-5 rounded-lg border-2">
+                    <div className="p-4 lg:p-6 mt-3 lg:mt-5 rounded-lg border-2">
                       {/* Company Info */}
-                      <div className="mb-4">
-                        <h3 className="text-primary text-lg font-bold font-poppins">
+                      <div className="mb-3 lg:mb-4">
+                        <h3 className="text-primary text-base lg:text-lg font-bold font-poppins">
                           {study.companyName}
                         </h3>
                         {study.subtitle && (
@@ -230,14 +248,14 @@ const CaseStudies = () => {
                       </div>
 
                       {/* Insight */}
-                      <p className="text-text-secondary text-md leading-relaxed mb-4 font-poppin h-12">
+                      <p className="text-text-secondary text-sm lg:text-md leading-relaxed mb-3 lg:mb-4 font-poppin h-10 lg:h-12">
                         {study.insight}
                       </p>
 
                       {/* Result */}
-                      <div className="mb-6">
-                        <div className="bg-primary/5 rounded-lg p-4">
-                          <p className="text-primary font-semibold text-sm font-poppins">
+                      <div className="mb-4 lg:mb-6">
+                        <div className="bg-primary/5 rounded-lg p-3 lg:p-4">
+                          <p className="text-primary font-semibold text-xs lg:text-sm font-poppins">
                             {study.result}
                           </p>
                         </div>
@@ -245,7 +263,7 @@ const CaseStudies = () => {
 
                       {/* CTA Button */}
                       {!study.isSpecial ? (
-                        <button className="w-full border border-primary text-primary font-semibold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 font-poppins">
+                        <button className="w-full border border-primary text-primary font-semibold py-2 lg:py-3 px-4 lg:px-6 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 font-poppins text-sm lg:text-base">
                           View Case Study
                           <svg
                             className="w-4 h-4"
@@ -262,7 +280,7 @@ const CaseStudies = () => {
                           </svg>
                         </button>
                       ) : (
-                        <button className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/80 transition-colors duration-300 flex items-center justify-center gap-2 font-poppins">
+                        <button className="w-full bg-primary text-white font-semibold py-2 lg:py-3 px-4 lg:px-6 rounded-lg hover:bg-primary/80 transition-colors duration-300 flex items-center justify-center gap-2 font-poppins text-sm lg:text-base">
                           Get Started
                           <svg
                             className="w-4 h-4"

@@ -5,10 +5,22 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const intervalRef = useRef(null);
   const cardWidth = 420; // Card width + gap
   const cardsToShow = 2; // Number of cards to display at once
   const autoAdvanceInterval = 3000; // 3 seconds
+
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const testimonials = [
     {
@@ -132,11 +144,14 @@ const Testimonials = () => {
     >
       <div className="mx-auto">
         {/* Header */}
-        <motion.div className="text-center mb-10" variants={itemVariants}>
-          <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-poppins">
+        <motion.div
+          className="text-center mb-8 lg:mb-10"
+          variants={itemVariants}
+        >
+          <p className="text-primary text-sm lg:text-md font-medium uppercase tracking-wider mb-4 font-poppins">
             TESTIMONIALS
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6 font-poppins">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-text-primary mb-6 font-poppins">
             What Our
             <br />
             <span className="text-text-primary">Satisfied Clients Say</span>
@@ -151,10 +166,10 @@ const Testimonials = () => {
               prevTestimonial();
               handleUserInteraction();
             }}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            className="absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-2 lg:p-3 shadow-lg transition-all duration-300 hover:scale-110"
           >
             <svg
-              className="w-6 h-6 text-gray-600"
+              className="w-4 h-4 lg:w-6 lg:h-6 text-gray-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -172,10 +187,10 @@ const Testimonials = () => {
               nextTestimonial();
               handleUserInteraction();
             }}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+            className="absolute right-2 lg:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/90 hover:bg-white rounded-full p-2 lg:p-3 shadow-lg transition-all duration-300 hover:scale-110"
           >
             <svg
-              className="w-6 h-6 text-gray-600"
+              className="w-4 h-4 lg:w-6 lg:h-6 text-gray-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -190,10 +205,11 @@ const Testimonials = () => {
           </button>
 
           {/* Testimonial Cards Container */}
-          <div className="overflow-hidden h-[450px] px-16">
+          <div className="overflow-hidden h-[300px] md:h-[350px] lg:h-[450px] px-8 lg:px-16">
             <div className="flex gap-6 h-full items-center">
               <AnimatePresence initial={false} custom={direction}>
-                {[-1, 0, 1].map((offset) => {
+                {/* Mobile: Show only current card, Desktop: Show multiple cards */}
+                {(isMobile ? [0] : [-1, 0, 1]).map((offset) => {
                   const adjustedIndex = moduloIndex(currentIndex + offset);
                   const testimonial = testimonials[adjustedIndex];
 
@@ -207,7 +223,7 @@ const Testimonials = () => {
                       }}
                       animate={{
                         opacity: 1,
-                        x: offset * cardWidth,
+                        x: isMobile ? 0 : offset * cardWidth,
                         zIndex: offset === 0 ? 1 : 0,
                       }}
                       exit={{
@@ -219,24 +235,28 @@ const Testimonials = () => {
                         stiffness: 300,
                         damping: 30,
                       }}
-                      className={`absolute flex-shrink-0 w-[400px] h-[400px] bg-gradient-to-br ${testimonial.bgColor} rounded-3xl shadow-xl overflow-hidden`}
-                      style={{ left: "calc(50% - 200px)" }}
+                      className={`${
+                        isMobile ? "relative" : "absolute"
+                      } flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[400px] h-[280px] sm:h-[320px] lg:h-[400px] bg-gradient-to-br ${
+                        testimonial.bgColor
+                      } rounded-2xl lg:rounded-3xl shadow-xl overflow-hidden`}
+                      style={!isMobile ? { left: "calc(50% - 200px)" } : {}}
                     >
-                      <div className="flex h-full">
+                      <div className="flex h-full flex-col md:flex-row">
                         {/* Image */}
-                        <div className="w-2/5 relative">
+                        <div className="w-full md:w-2/5 h-1/3 md:h-full relative">
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            className="w-full h-full object-cover rounded-l-3xl"
+                            className="w-full h-full object-cover rounded-t-2xl md:rounded-t-none md:rounded-l-2xl lg:rounded-l-3xl"
                           />
                         </div>
                         {/* Content */}
-                        <div className="w-3/5 p-6 flex flex-col justify-center relative">
+                        <div className="w-full md:w-3/5 p-4 lg:p-6 flex flex-col justify-center relative h-2/3 md:h-full">
                           {/* Quote Icon */}
                           <div className="mb-2">
                             <svg
-                              className="w-6 h-6 text-gray-800"
+                              className="w-4 h-4 lg:w-6 lg:h-6 text-gray-800"
                               fill="currentColor"
                               viewBox="0 0 24 24"
                             >
@@ -245,25 +265,25 @@ const Testimonials = () => {
                           </div>
 
                           {/* Quote */}
-                          <p className="text-gray-800 text-sm leading-relaxed mb-4 line-clamp-4">
+                          <p className="text-gray-800 text-xs sm:text-sm lg:text-sm leading-relaxed mb-3 lg:mb-4 line-clamp-3 lg:line-clamp-4">
                             "{testimonial.quote}"
                           </p>
 
                           {/* Author Info */}
                           <div>
-                            <h4 className="font-bold text-gray-900 text-base mb-1">
+                            <h4 className="font-bold text-gray-900 text-sm lg:text-base mb-1">
                               {testimonial.name}
                             </h4>
-                            <p className="text-xs text-gray-700 uppercase tracking-wide">
+                            <p className="text-xs lg:text-xs text-gray-700 uppercase tracking-wide">
                               {testimonial.position} - {testimonial.company}
                             </p>
                           </div>
 
                           {/* Company Logo */}
-                          <div className="absolute bottom-4 right-4">
-                            <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                          <div className="absolute bottom-3 lg:bottom-4 right-3 lg:right-4">
+                            <div className="w-5 h-5 lg:w-6 lg:h-6 bg-white/20 rounded-full flex items-center justify-center">
                               <svg
-                                className="w-3 h-3 text-gray-700"
+                                className="w-2 h-2 lg:w-3 lg:h-3 text-gray-700"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                               >
@@ -281,16 +301,18 @@ const Testimonials = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 lg:mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => {
-                  setDirection(index > currentIndex % testimonials.length ? 1 : -1);
+                  setDirection(
+                    index > currentIndex % testimonials.length ? 1 : -1
+                  );
                   setCurrentIndex(index);
                   handleUserInteraction();
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${
                   currentIndex % testimonials.length === index
                     ? "bg-primary scale-125"
                     : "bg-gray-300 hover:bg-gray-400"
