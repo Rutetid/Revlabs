@@ -44,11 +44,12 @@ const WhyChoose = () => {
 
   return (
     <motion.section
-      className="bg-white py-20 px-4 sm:px-6 lg:px-20 mb-20"
+      className="bg-white py-20 px-4 sm:px-6 lg:px-20 mb-20 scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
+      id="why_choose"
     >
       <div className=" mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

@@ -21,7 +21,10 @@ const OurServicesHeader = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              variants={headerVariants}>
+              variants={headerVariants}
+              id="our_services"
+              className="scroll-mt-36"
+              >
 
 
           <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-poppins">

@@ -31,7 +31,7 @@ const Testimonials = () => {
       quote:
         "RevLabs helped us scale our D2C brand from scratch to ₹5 Cr ARR within six months. The full-stack growth approach—strategy, tech, performance—delivered results faster than we imagined.",
       image:
-        "https://images.unsplash.com/photo-1494790108755-2616b332e234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       bgColor: "from-purple-300 to-pink-100",
     },
     {
@@ -134,13 +134,14 @@ const Testimonials = () => {
 
   return (
     <motion.section
-      className="bg-white py-20 px-4 sm:px-6 lg:px-8"
+      className="bg-white py-20 px-4 sm:px-6 lg:px-8 scroll-mt-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
       onHoverStart={() => setIsPaused(true)}
       onHoverEnd={() => setIsPaused(false)}
+      id="testimonials"
     >
       <div className="mx-auto">
         {/* Header */}

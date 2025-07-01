@@ -187,7 +187,7 @@ const StepsSection = () => {
 	});
 
 	return (
-		<div ref={containerRef} className="relative h-[400vh]">
+		<div ref={containerRef} className="relative h-[400vh]" >
 			<div className="sticky top-20 h-screen w-full overflow-hidden bg-[#1a1a1a]">
 				{services.map((service, index) => {
 					let start, end;

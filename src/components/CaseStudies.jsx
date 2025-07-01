@@ -17,7 +17,7 @@ const CaseStudies = () => {
       id: 2,
       companyName: "The Bowl Company",
       subtitle: "HOMELY",
-      logo: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&crop=center",
+      logo: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=300&fit=crop&crop=center",
       insight: "Built and launched under Swiggy New Supply",
       result: "Successful launch and integration",
       backgroundColor: "bg-green-100",

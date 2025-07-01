@@ -5,10 +5,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "#" },
-    { name: "Services", href: "#services" },
-    { name: "Industries", href: "#" },
-    { name: "Case Studies", href: "#" },
-    { name: "About Us", href: "#" },
+    { name: "Our Services", href: "#our_services" },
+    { name: "Why choose us", href: "#why_choose" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Our Team", href: "#our_team" },
   ];
 
   return (

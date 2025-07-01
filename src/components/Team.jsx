@@ -62,11 +62,12 @@ const Team = () => {
 
   return (
     <motion.section
-      className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 font-poppins"
+      className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 font-poppins scroll-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
+      id="our_team"
     >
       <div className="max-w-7xl mx-auto">
         {" "}

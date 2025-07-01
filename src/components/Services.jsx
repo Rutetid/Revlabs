@@ -138,7 +138,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="bg-white px-4 sm:px-6 lg:px-8">
+    <section className="bg-white px-4 sm:px-6 lg:px-8">
       <div className="px-10 mx-auto">
         {" "}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
