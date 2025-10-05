@@ -40,11 +40,16 @@ const Navbar = () => {
             </nav>
           </div>{" "}
           {/* Right Section: CTA Button */}
-          <div className="hidden md:block ml-auto">
-            <button className="bg-primary text-white hover:bg-primary-dark px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm hover:shadow-md">
-              Get in touch
-            </button>
-          </div>
+         <div className="pt-4">
+  <a
+    href="https://wa.me/919876543210" // replace with your WhatsApp number (without + or spaces)
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block w-full bg-primary text-white hover:bg-primary-dark px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm hover:shadow-md text-center"
+  >
+    Chat on WhatsApp
+  </a>
+</div>
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
