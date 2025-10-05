@@ -15,7 +15,7 @@ const OurServicesHeader = () => {
     }
 
   return (
-      <div className=" px-16 bg-[#1a1a1a] pt-16"
+      <div className=" px-16 bg-gray-100 pt-6 pb-4"
       >
           <motion.div
               initial="hidden"
@@ -30,7 +30,7 @@ const OurServicesHeader = () => {
           <p className="text-primary text-md font-medium uppercase tracking-wider mb-4 font-poppins">
               OUR SERVICES
           </p>
-          <h2 className="text-white text-3xl sm:text-5xl font-bold  font-poppins">
+          <h2 className="text-black text-3xl sm:text-5xl font-bold  font-poppins">
               Everything You Need to Scale.
               <span className="block">All in One Place.</span>
           </h2>

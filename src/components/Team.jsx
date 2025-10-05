@@ -21,6 +21,7 @@ const Team = () => {
         "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
     },
   ];
+
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -70,7 +71,6 @@ const Team = () => {
       id="our_team"
     >
       <div className="max-w-7xl mx-auto">
-        {" "}
         {/* Header */}
         <motion.div className="text-center mb-16" variants={headerVariants}>
           <p className="text-primary text-lg font-medium uppercase tracking-wider mb-4">
@@ -84,47 +84,42 @@ const Team = () => {
             <br />
             We create solutions that meet needs and drive success.
           </p>
-        </motion.div>{" "}
+        </motion.div>
+
         {/* Team Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.id}
-              className="group cursor-pointer"
+              className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-500 flex flex-col md:flex-row"
               variants={index === 0 ? leftItemVariants : rightItemVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative h-96 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-500">
-                {/* Image */}
+              {/* Image Section (70%) */}
+              <div className="md:w-7/12 w-full relative h-64 md:h-auto">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{ backgroundImage: `url(${member.image})` }}
                 >
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/60"></div>
+                  <div className="absolute inset-0 bg-black/20"></div>
                 </div>
+              </div>
 
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-end p-8">
-
-                  {/* Text Content */}
-                  <div className="text-white">
-                    <h3 className="text-3xl font-bold mb-2 font-script">
-                      {member.name}
-                    </h3>
-                    <p className="text-md font-semibold mb-3 text-white/90">
-                      {member.role}
-                    </p>
-                    <p className="text-sm text-white/80 leading-relaxed">
-                      {member.description}
-                    </p>
-                  </div>
-                </div>
+              {/* Text Section (30%) */}
+              <div className="md:w-5/12 w-full flex flex-col justify-center p-8 bg-white text-gray-800">
+                <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
+                <p className="text-sm font-semibold mb-3 text-primary">
+                  {member.role}
+                </p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {member.description}
+                </p>
               </div>
             </motion.div>
           ))}
-        </div>{" "}
+        </div>
+
         {/* CTA Section */}
         <motion.div className="text-center mt-16" variants={headerVariants}>
           <p className="text-text-secondary mb-6">

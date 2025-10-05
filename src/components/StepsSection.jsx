@@ -227,13 +227,14 @@ const StepsSection = () => {
 					);
 
 					const cardColors = [
-						"#1a1a1a", // Card 1
-						"#2c0e2f", // Card 2
-						"#1e1f16", // Card 3
-						"#1c110a", // Card 4
-						"#2b1a2e", // Card 5
-						"#1a2623", // Card 6
-					];
+  "#7278f2", // Card 1 - lighter blue
+"#d97369", // Card 2 - coral
+"#7278f2", // Card 3 - lighter blue (repeated)
+"#5a76a3", // Card 4 - deep blue
+"#7278f2", // Card 5 - lighter blue (repeated)
+"#d97369", // Card 6 - coral
+];
+
 
 					return (
 						<motion.div

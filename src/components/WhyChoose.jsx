@@ -103,7 +103,7 @@ const WhyChoose = () => {
           {/* Right Content */}
           <div className="relative">
             {/* Image Gallery */}
-            <div className="relative h-full py-10 mt-28 rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative h-full py-10  mt-8 rounded-2xl overflow-hidden shadow-lg">
               {reasons.map((reason, index) => (
                 <img
                   key={reason.id}
